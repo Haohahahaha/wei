@@ -1,0 +1,231 @@
+/*
+ * Photo Gallery Component for MkDocs Material
+ * Swiper Cards Effect (3:4 portrait) + LightGallery Integration
+ */
+
+/* ===== Gallery Container ===== */
+.photo-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 24px 12px 0 12px;  /* narrow side padding, arrows moved to bottom */
+}
+
+.admonition .photo-gallery {
+    margin: 8px auto 4px;
+}
+
+/* ===== Swiper — 3:4 portrait (width:height = 3:4) ===== */
+.photo-gallery .swiper {
+    width: 268px;
+    height: 357px;
+    margin: 0 auto;
+    perspective: 1200px;
+    /* Do NOT clip overflow — cards extend sideways into padding */
+    overflow: visible;
+}
+
+.photo-gallery .swiper-wrapper {
+    align-items: center;
+}
+
+/* ===== Slides ===== */
+.photo-gallery .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--md-default-bg-color, #fff);
+    cursor: pointer;
+    transition: none;
+}
+
+.photo-gallery .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo-gallery .swiper-slide video,
+.photo-gallery .swiper-slide .swiper-slide-shadow {
+    pointer-events: none;
+}
+
+/* ===== Video overlay ===== */
+.photo-gallery .swiper-slide-video {
+    position: relative;
+}
+
+.photo-gallery .swiper-slide-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo-gallery .swiper-slide-video .gallery-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+/* ===== Navigation Arrows — now in .gallery-controls bar ===== */
+.photo-gallery .gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    min-height: 36px;
+}
+
+.photo-gallery .gallery-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.25s ease, transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.photo-gallery .gallery-arrow:hover {
+    background: rgba(128, 128, 128, 0.65);
+    transform: scale(1.1);
+}
+
+.photo-gallery .gallery-arrow:active {
+    transform: scale(0.95);
+}
+
+/* ===== Pagination Bullets — inside controls bar ===== */
+.photo-gallery .swiper-pagination {
+    position: static;
+    width: auto;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.photo-gallery .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px !important;
+    background: var(--md-default-fg-color--light, #999);
+    opacity: 0.4;
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.photo-gallery .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--md-accent-fg-color, #4051b5);
+    transform: scale(1.3);
+}
+
+/* ===== Caption & Counter — each on its own line, generous spacing ===== */
+.photo-gallery .gallery-counter {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--md-default-fg-color--lighter, #999);
+    padding: 14px 12px 0 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.photo-gallery .gallery-caption {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--md-default-fg-color--light, #666);
+    padding: 6px 12px 10px 12px;
+    min-height: 1.4em;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+/* ===== Theme: Light ===== */
+[data-md-color-scheme="default"] .photo-gallery .swiper-slide {
+    background: #fff;
+}
+
+[data-md-color-scheme="default"] .photo-gallery .gallery-arrow {
+    background: rgba(0, 0, 0, 0.12);
+    color: #333;
+}
+
+/* ===== Theme: Dark (Slate) ===== */
+[data-md-color-scheme="slate"] .photo-gallery .swiper-slide {
+    background: #1e1e2e;
+}
+
+[data-md-color-scheme="slate"] .photo-gallery .gallery-arrow {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ddd;
+}
+
+[data-md-color-scheme="slate"] .photo-gallery .gallery-arrow:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .photo-gallery {
+        max-width: 100%;
+        padding: 16px 24px 0 24px;
+    }
+
+    .photo-gallery .swiper {
+        width: 225px;
+        height: 300px;
+    }
+
+    .photo-gallery .swiper-slide {
+        border-radius: 8px;
+    }
+
+    .photo-gallery .swiper-slide img {
+        border-radius: 8px;
+    }
+
+    .photo-gallery .gallery-controls {
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .photo-gallery .gallery-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+}
+
+/* ===== LightGallery overrides ===== */
+.lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .photo-gallery .swiper-slide,
+    .photo-gallery .gallery-arrow {
+        transition: none;
+    }
+}

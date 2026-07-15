@@ -1,0 +1,103 @@
+site_name: 老妈の小网站
+theme: 
+  name: material
+  icon:
+    logo: material/library
+  palette:
+    - scheme: default # 日间模式
+      primary: light green # 上方的
+      accent: amber # 链接等可交互元件的高亮色
+      toggle:
+        icon: material/weather-night # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+    - scheme: slate # 夜间模式
+      primary: teal
+      accent: brown
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.expand
+    - navigation.prune # 折叠
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    # Instant Loading
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    # Anchor tracking
+    - navigation.tracking
+  language: zh
+
+# 这里写目录
+nav:
+  - 主页: index.md
+  - 测试页: test/test.md
+
+markdown_extensions:
+  # 支持个性化定制
+  # Reference: https://squidfunk.github.io/mkdocs-material/reference/
+  #--------------------分割线--------------------
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  # Icons, Emojis
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # Formatting: Highlight, Sub & Keyboard Keys.
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  # attr_list
+  - markdown.extensions.attr_list
+  # List
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
+extra_css:
+  - mkdocs/css/no-footer.css # 不使用底部的翻页
+  - mkdocs/css/hidden.css # 文字隐藏效果
+  - assets/vendor/swiper/swiper-bundle.min.css
+  - assets/vendor/lightgallery/lightgallery-bundle.min.css
+  - assets/css/gallery.css
+  - https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
+  - assets/css/aplayer-dark.css
+    
+extra_javascript:
+  - assets/vendor/swiper/swiper-bundle.min.js
+  - assets/vendor/lightgallery/lightgallery.min.js
+  - assets/vendor/lightgallery/lg-zoom.min.js
+  - assets/vendor/lightgallery/lg-thumbnail.min.js
+  - assets/vendor/lightgallery/lg-fullscreen.min.js
+  - assets/vendor/lightgallery/lg-autoplay.min.js
+  - assets/vendor/lightgallery/lg-pager.min.js
+  - assets/vendor/lightgallery/lg-video.min.js
+  - assets/js/gallery.js
+  - https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js
+  - https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js
+  - assets/js/music-player.js
+  - assets/js/local-music-player.js
+    
+extra:
+  social: # icons
+    - icon: simple/githubactions
+      link: https://github.com/Haohahahaha/wei/actions/
+      name: GitHub Actions
+
+## [bottom-left corner]
+copyright: 
+  <a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备2024078994号</a><br/>
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13020302001386" target="_blank">冀公网安备13020302001386号</a><br/>
+  Copyright &copy; 2022-现在 浩哈哈哈哈_ # 左下角的版权声明

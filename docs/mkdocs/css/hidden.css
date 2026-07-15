@@ -1,0 +1,10 @@
+.hidden-text {
+    color: transparent; /* 默认隐藏文字 */
+    user-select: text;  /* 允许选中 */
+}
+
+/* 鼠标选中时显示文字 */
+.hidden-text::selection {
+    color: #a2eab2; /* 选中显示文字颜色 */
+    background: #00640a; /* 选中背景颜色，可以自己调整 */
+}
