@@ -1,9 +1,5 @@
 # 测试页
 
-!!! tip "音乐🎵"
-
-    <iframe frameborder="yes" border="100" marginwidth="4" marginheight="0" width=333 height=86 src="//music.163.com/outchain/player?type=2&id=497918887&auto=0&height=66"></iframe>
-
 !!! tip "本地音乐"
 
     <div class="local-music"

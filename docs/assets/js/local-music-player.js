@@ -44,22 +44,34 @@
 
         if (!url) return;
 
-        var audio = [{
-            name: name,
-            artist: artist,
-            url: url,
-            cover: cover,
-            lrc: lrc
-        }];
+        // APlayer lrc expects a string, not URL.
+        // If data-lrc looks like a URL (contains '.' or '/'), fetch it as text.
+        function createPlayer(lrcText) {
+            var ap = new APlayer({
+                container: container,
+                autoplay: autoplay === 'true',
+                preload: 'auto',
+                lrcType: lrcText ? 1 : 0,
+                audio: [{
+                    name: name,
+                    artist: artist,
+                    url: url,
+                    cover: cover,
+                    lrc: lrcText || ''
+                }]
+            });
+            players.push(ap);
+        }
 
-        var ap = new APlayer({
-            container: container,
-            autoplay: autoplay === 'true',
-            preload: 'auto',
-            audio: audio
-        });
-
-        players.push(ap);
+        if (lrc && /[/.]/.test(lrc)) {
+            // Looks like a file path, fetch it
+            fetch(lrc)
+                .then(function (resp) { return resp.text(); })
+                .then(function (text) { createPlayer(text); })
+                .catch(function () { createPlayer(''); });
+        } else {
+            createPlayer(lrc);
+        }
     }
 
     function scanAndInit(root) {
