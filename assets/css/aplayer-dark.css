@@ -1,0 +1,79 @@
+/* APlayer 暗黑模式适配 Material for MkDocs */
+[data-md-color-scheme="slate"] .aplayer {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e0e0e0 !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-info .aplayer-music {
+  color: #e0e0e0 !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-info .aplayer-music .aplayer-author,
+[data-md-color-scheme="slate"] .aplayer .aplayer-info .aplayer-music .aplayer-title {
+  color: #e0e0e0 !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  color: #b0b0b0 !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon {
+  fill: #e0e0e0 !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-list ol li {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #ccc !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-list ol li:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-list ol li.aplayer-list-light {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-list ol li .aplayer-list-author,
+[data-md-color-scheme="slate"] .aplayer .aplayer-list ol li .aplayer-list-title {
+  color: #ccc !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-lrc {
+  color: #bbb !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-lrc::before,
+[data-md-color-scheme="slate"] .aplayer .aplayer-lrc::after {
+  background: linear-gradient(to bottom, rgba(30, 30, 30, 1), rgba(30, 30, 30, 0)) !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  color: #fff !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer svg path {
+  fill: #e0e0e0 !important;
+}
+
+/* 迷你模式 */
+[data-md-color-scheme="slate"] .aplayer.aplayer-withlist .aplayer-info {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .aplayer .aplayer-list {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* 进度条 */
+[data-md-color-scheme="slate"] .aplayer .aplayer-pic {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* meting-js 容器边距 */
+.aplayer {
+  border-radius: 8px;
+  margin: 0.5em 0;
+  max-width: 600px;
+}
