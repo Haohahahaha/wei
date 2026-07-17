@@ -37,7 +37,7 @@ theme:
 # 这里写目录
 nav:
   - 主页: index.md
-  - 测试页: hpy/hpy_brthdy.md
+  - 祝你生日快乐: hpy/hpy_brthdy.md
 
 markdown_extensions:
   # 支持个性化定制
